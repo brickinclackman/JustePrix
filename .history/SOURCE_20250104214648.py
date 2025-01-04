@@ -24,6 +24,4 @@ def check_validity_num(num_comp,num_user):
         num_user (int): nombre choisi de l'utilisateur
 
     """
-    while(validity == False){
-        
-    }
+    while

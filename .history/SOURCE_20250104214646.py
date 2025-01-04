@@ -3,7 +3,7 @@ from termcolor import colored, cprint
 import shutil
 
 num_computer = random.randint(0,100)
-validity = False
+validity = 0
 
 cols = shutil.get_terminal_size().columns
 banner = """
@@ -24,6 +24,4 @@ def check_validity_num(num_comp,num_user):
         num_user (int): nombre choisi de l'utilisateur
 
     """
-    while(validity == False){
-        
-    }
+    while
