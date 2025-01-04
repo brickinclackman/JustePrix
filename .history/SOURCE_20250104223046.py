@@ -19,7 +19,7 @@ def check_validity_num(num_comp,num_essais_MAX):
     while(validity == False):
         if(num_user < num_comp):
             validity = False
-            print(colored("Trop faible ! ","white","on_blue"))
+            print(colored("Trop faible","white","on_blue"))
             num_essais +=1
             if(num_essais >= num_essais_MAX):
                 validity = True

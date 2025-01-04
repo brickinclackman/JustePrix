@@ -19,20 +19,20 @@ def check_validity_num(num_comp,num_essais_MAX):
     while(validity == False):
         if(num_user < num_comp):
             validity = False
-            print(colored("Trop faible ! ","white","on_blue"))
+            print(colored("Trop faible","white","on_blue"))
             num_essais +=1
             if(num_essais >= num_essais_MAX):
                 validity = True
-                print(colored("Nombre essaies DÉPASSÉ ! ","white","on_light_red",attrs=["bold", "blink"]))
-                print(colored(f"Voici le nombre de l'ordinateur : {num_comp} ","white","on_light_red",attrs=["bold", "blink"]))
+                print(colored("Nombre essaies DÉPASSÉ !","white","on_light_red",attrs=["bold", "blink"]))
+                print(colored(f"Voici le nombre de l'ordinateur : {num_comp}","white","on_light_red",attrs=["bold", "blink"]))
             if(num_essais < num_essais_MAX):
                 num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
         if(num_user == num_comp):
             validity = True
-            print(colored("Vous avez trouvé le nombre mystère !!! ","white","on_light_green"))
+            print(colored("Vous avez trouvé le nombre mystère !!!","white","on_light_green"))
         if(num_user > num_comp):
             validity = False
-            print(colored("Trop grand ! ","white","on_red"))
+            print(colored("Trop grand","white","on_red"))
             num_essais +=1
             if(num_essais >= num_essais_MAX):
                 validity = True
