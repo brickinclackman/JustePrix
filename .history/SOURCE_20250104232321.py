@@ -7,7 +7,7 @@ import shutil
 
 #------ Déclaration des fonctions ------
 
-def check_validity_num(num_comp, num_essais_MAX, choix_mod):
+def check_validity_num(num_comp,num_essais_MAX,choix_mod):    
     """Fonction qui vérifie si le nombre de l'utilisateur est supérieur/inférieur/égal au nombre de l'ordinateur.
 
     Args:
@@ -16,47 +16,41 @@ def check_validity_num(num_comp, num_essais_MAX, choix_mod):
     start_time = time.time()  # Démarrer le chronomètre
     
     validity = False
+    
     num_essais = 0
     
-    print(colored("Bienvenue dans le jeu du Nombre Mystère !", "cyan", attrs=["bold"]))
-    print(colored(f"Le nombre mystère est entre 0 et 100. Vous avez {num_essais_MAX} essais.", "yellow"))
+    num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
     
-    # Demander à l'utilisateur de saisir un nombre
-    num_user = int(input(colored("\nVeuillez entrer un nombre : ", "light_magenta")))
-
     if(choix_mod == 4):
-        num_essais = 1  # Si mode Hardcore, un seul essai autorisé
+        num_essais = 1
     
-    while validity == False:
-        if num_user < num_comp:
+    while(validity == False):
+        if(num_user < num_comp):
             validity = False
-            print(colored("\nTrop faible ! Essayez un nombre plus grand. 😕", "white", "on_blue"))
-            num_essais += 1
-            if num_essais > num_essais_MAX:
+            print(colored("Trop faible ! ","white","on_blue"))
+            num_essais +=1
+            if(num_essais > num_essais_MAX):
                 validity = True
-                print(colored("\nNombre d'essais dépassé ! 🛑", "white", "on_light_red", attrs=["bold", "blink"]))
-                print(colored(f"\nVoici le nombre de l'ordinateur : {num_comp}", "white", "on_light_red", attrs=["bold", "blink"]))
-            if num_essais < num_essais_MAX:
-                print(colored(f"\nIl vous reste {num_essais_MAX - num_essais} essais. 🙌", "dark_grey"))
-                num_user = int(input(colored("\nVeuillez entrer un nombre : ", "light_magenta")))
-
-        if num_user == num_comp:
-            elapsed_time = time.time() - start_time
+                print(colored("Nombre essaies DÉPASSÉ ! ","white","on_light_red",attrs=["bold", "blink"]))
+                print(colored(f"Voici le nombre de l'ordinateur : {num_comp} ","white","on_light_red",attrs=["bold", "blink"]))
+            if(num_essais < num_essais_MAX):
+                print(colored(f"Encore {num_essais_MAX - num_essais} essais.","dark_grey"))
+                num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
+        if(num_user == num_comp):
             validity = True
-            print(colored("\n🎉 Félicitations ! Vous avez trouvé le nombre mystère !!! 🎉", "white", "on_light_green"))
-            print(colored(f"\nTemps écoulé : {elapsed_time:.2f} secondes 🕒", "yellow"))
-
-        if num_user > num_comp:
+            print(colored("Vous avez trouvé le nombre mystère !!! ","white","on_light_green"))
+            elapsed_time = time.time() - start_time
+        if(num_user > num_comp):
             validity = False
-            print(colored("\nTrop grand ! Essayez un nombre plus petit. 😕", "white", "on_red"))
-            num_essais += 1
-            if num_essais > num_essais_MAX:
+            print(colored("Trop grand ! ","white","on_red"))
+            num_essais +=1
+            if(num_essais > num_essais_MAX):
                 validity = True
-                print(colored("\nNombre d'essais dépassé ! 🛑", "white", "on_light_red", attrs=["bold", "blink"]))
-                print(colored(f"\nVoici le nombre de l'ordinateur : {num_comp}", "white", "on_light_red", attrs=["bold", "blink"]))
-            if num_essais < num_essais_MAX:
-                print(colored(f"\nIl vous reste {num_essais_MAX - num_essais} essais. 🙌", "dark_grey"))
-                num_user = int(input(colored("\nVeuillez entrer un nombre : ", "light_magenta")))
+                print(colored("Nombre essaies DÉPASSÉ ! ","white","on_light_red",attrs=["bold", "blink"]))
+                print(colored(f"Voici le nombre de l'ordinateur : {num_comp} ","white","on_light_red",attrs=["bold", "blink"]))
+            if(num_essais < num_essais_MAX):
+                print(colored(f"Encore {num_essais_MAX - num_essais} essais.","dark_grey"))
+                num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
          
 def print_banner():
     """
@@ -110,21 +104,6 @@ def print_menu():
     
     return choix
 
-def ask_replay():
-    """Fonction qui demande si l'utilisateur veut rejouer et affiche un message d'au revoir stylé"""
-    replay = input(colored("\nVoulez-vous rejouer ? (Oui/Non)\n", "light_cyan", attrs=["bold"]))
-    
-    if replay.upper() == "OUI":
-        print(colored("\n🎮 Super ! On recommence, bonne chance ! 🍀", "green", attrs=["bold"]))
-        return True
-    elif replay.upper() == "NON":
-        print(colored("\nMerci d'avoir joué ! 👋 À bientôt !", "yellow", attrs=["bold"]))
-        print(colored("\n🌟 Vous avez été génial ! 🌟", "cyan", attrs=["bold"]))
-        return False
-    else:
-        print(colored("\nRéponse invalide, veuillez répondre par 'Oui' ou 'Non'.", "red", attrs=["bold"]))
-        return ask_replay()  # Relance la question si la réponse n'est pas valide
-
 def main():
     print_banner()
 
@@ -157,7 +136,11 @@ def main():
 
         check_validity_num(num_computer,num_essais_MAX,choix)
         
-        playing = ask_replay()
+        replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
+        if(replay.upper() == "OUI"):
+            playing = True
+        if(replay.upper() == "NON"):
+            playing = False
 
 #------ Lancement du programme ------
 

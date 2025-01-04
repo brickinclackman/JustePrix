@@ -157,7 +157,11 @@ def main():
 
         check_validity_num(num_computer,num_essais_MAX,choix)
         
-        playing = ask_replay()
+        replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
+        if(replay.upper() == "OUI"):
+            playing = True
+        if(replay.upper() == "NON"):
+            playing = False
 
 #------ Lancement du programme ------
 

@@ -157,7 +157,7 @@ def main():
 
         check_validity_num(num_computer,num_essais_MAX,choix)
         
-        playing = ask_replay()
+        replay = 
 
 #------ Lancement du programme ------
 

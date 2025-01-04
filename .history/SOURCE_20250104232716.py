@@ -110,21 +110,6 @@ def print_menu():
     
     return choix
 
-def ask_replay():
-    """Fonction qui demande si l'utilisateur veut rejouer et affiche un message d'au revoir stylé"""
-    replay = input(colored("\nVoulez-vous rejouer ? (Oui/Non)\n", "light_cyan", attrs=["bold"]))
-    
-    if replay.upper() == "OUI":
-        print(colored("\n🎮 Super ! On recommence, bonne chance ! 🍀", "green", attrs=["bold"]))
-        return True
-    elif replay.upper() == "NON":
-        print(colored("\nMerci d'avoir joué ! 👋 À bientôt !", "yellow", attrs=["bold"]))
-        print(colored("\n🌟 Vous avez été génial ! 🌟", "cyan", attrs=["bold"]))
-        return False
-    else:
-        print(colored("\nRéponse invalide, veuillez répondre par 'Oui' ou 'Non'.", "red", attrs=["bold"]))
-        return ask_replay()  # Relance la question si la réponse n'est pas valide
-
 def main():
     print_banner()
 
@@ -157,7 +142,11 @@ def main():
 
         check_validity_num(num_computer,num_essais_MAX,choix)
         
-        playing = ask_replay()
+        replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
+        if(replay.upper() == "OUI"):
+            playing = True
+        if(replay.upper() == "NON"):
+            playing = False
 
 #------ Lancement du programme ------
 
