@@ -91,13 +91,13 @@ def print_menu():
     print(colored("║ 4) Hardcore  : 🟣 Votre nombre est compris entre 0 et 100 (1 essai MAX)      ║", "magenta"))
     
     # Affichage de la bordure du bas
-    print(colored("╠══════════════════════════════════════════════════════════════════════════════╣", "yellow"))
+    print(colored("╠══════════════════════════════════════════════════════════════════════════════ ╣", "yellow"))
     
     # Demande du choix avec un prompt attrayant
     choix = int(input(colored("║ Veuillez entrer votre choix : ", "light_blue") + colored("→ ", "cyan")))
     
     # Affichage d'une ligne de séparation
-    print(colored("╚══════════════════════════════════════════════════════════════════════════════╝", "yellow"))
+    print(colored("╚════════════════════════════════════════════╝", "yellow"))
     
     return choix
 

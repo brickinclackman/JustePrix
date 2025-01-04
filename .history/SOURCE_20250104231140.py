@@ -81,8 +81,8 @@ def print_menu():
     # Affichage de la bordure du menu
     print(colored("╔══════════════════════════════════════════════════════════════════════════════╗", "yellow"))
     print(colored("║            Choisissez votre mode                                             ║", "cyan"))
-    print(colored("║                de jeu :                                                      ║", "cyan"))
-    print(colored("╠══════════════════════════════════════════════════════════════════════════════╣", "yellow"))
+    print(colored("║                de jeu :                                                       ║", "cyan"))
+    print(colored("╠════════════════════════════════════════════╣", "yellow"))
     
     # Affichage des options de jeu avec des emojis et couleurs variées
     print(colored("║ 1) Facile    : 🟢 Votre nombre est compris entre 0 et 100 (30 essais MAX)    ║", "green"))
@@ -91,13 +91,13 @@ def print_menu():
     print(colored("║ 4) Hardcore  : 🟣 Votre nombre est compris entre 0 et 100 (1 essai MAX)      ║", "magenta"))
     
     # Affichage de la bordure du bas
-    print(colored("╠══════════════════════════════════════════════════════════════════════════════╣", "yellow"))
+    print(colored("╠════════════════════════════════════════════╣", "yellow"))
     
     # Demande du choix avec un prompt attrayant
     choix = int(input(colored("║ Veuillez entrer votre choix : ", "light_blue") + colored("→ ", "cyan")))
     
     # Affichage d'une ligne de séparation
-    print(colored("╚══════════════════════════════════════════════════════════════════════════════╝", "yellow"))
+    print(colored("╚════════════════════════════════════════════╝", "yellow"))
     
     return choix
 
