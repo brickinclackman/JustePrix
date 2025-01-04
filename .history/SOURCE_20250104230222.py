@@ -19,8 +19,7 @@ def check_validity_num(num_comp,num_essais_MAX,choix_mod):
     
     num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
     
-    if(choix_mod == 4):
-        num_essais = 1
+    if(chi)
     
     while(validity == False):
         if(num_user < num_comp):

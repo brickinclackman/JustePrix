@@ -19,9 +19,6 @@ def check_validity_num(num_comp,num_essais_MAX,choix_mod):
     
     num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
     
-    if(choix_mod == 4):
-        num_essais = 1
-    
     while(validity == False):
         if(num_user < num_comp):
             validity = False
@@ -109,7 +106,7 @@ def main():
 
         num_computer = random.randint(0,100)
 
-        check_validity_num(num_computer,num_essais_MAX,choix)
+        check_validity_num(num_computer,num_essais_MAX)
         
         replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
         if(replay == "Oui"):

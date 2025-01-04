@@ -7,7 +7,7 @@ import shutil
 
 #------ Déclaration des fonctions ------
 
-def check_validity_num(num_comp,num_essais_MAX,choix_mod):    
+def check_validity_num(num_comp,num_essais_MAX):    
     """Fonction qui vérifie si le nombre de l'utilisateur est supérieur/inférieur/égal au nombre de l'ordinateur.
 
     Args:
@@ -15,12 +15,9 @@ def check_validity_num(num_comp,num_essais_MAX,choix_mod):
     """
     validity = False
     
-    num_essais = 0
+    num_essais = 1
     
     num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
-    
-    if(choix_mod == 4):
-        num_essais = 1
     
     while(validity == False):
         if(num_user < num_comp):
@@ -32,7 +29,7 @@ def check_validity_num(num_comp,num_essais_MAX,choix_mod):
                 print(colored("Nombre essaies DÉPASSÉ ! ","white","on_light_red",attrs=["bold", "blink"]))
                 print(colored(f"Voici le nombre de l'ordinateur : {num_comp} ","white","on_light_red",attrs=["bold", "blink"]))
             if(num_essais < num_essais_MAX):
-                print(colored(f"Encore {num_essais_MAX - num_essais} essais.","dark_grey"))
+                print(colored("Encore "))
                 num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
         if(num_user == num_comp):
             validity = True
@@ -46,7 +43,6 @@ def check_validity_num(num_comp,num_essais_MAX,choix_mod):
                 print(colored("Nombre essaies DÉPASSÉ ! ","white","on_light_red",attrs=["bold", "blink"]))
                 print(colored(f"Voici le nombre de l'ordinateur : {num_comp} ","white","on_light_red",attrs=["bold", "blink"]))
             if(num_essais < num_essais_MAX):
-                print(colored(f"Encore {num_essais_MAX - num_essais} essais.","dark_grey"))
                 num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
          
 def print_banner():
@@ -109,7 +105,7 @@ def main():
 
         num_computer = random.randint(0,100)
 
-        check_validity_num(num_computer,num_essais_MAX,choix)
+        check_validity_num(num_computer,num_essais_MAX)
         
         replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
         if(replay == "Oui"):
