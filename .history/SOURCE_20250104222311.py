@@ -73,7 +73,7 @@ if(choix == 4):
     num_essais_MAX = 1
 else:
     while(choix != 1):
-        choix = print_menu()
+        choix
 
 num_computer = random.randint(0,100)
 

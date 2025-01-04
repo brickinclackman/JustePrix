@@ -4,7 +4,7 @@ import sys
 import time
 import shutil
 
-def check_validity_num(num_comp,num_essais_MAX):    
+def check_validity_num(num_comp):    
     """Fonction qui vérifie si le nombre de l'utilisateur est supérieur/inférieur/égal au nombre de l'ordinateur.
 
     Args:
@@ -30,7 +30,7 @@ def check_validity_num(num_comp,num_essais_MAX):
             print(colored("Trop grand","white","on_red"))
             num_essais +=1
             num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))      
-        if(num_essais >= num_essais_MAX):
+        if(num_essais >= 30):
             validity = True
             print(colored("Nombre essaies DÉPASSÉ !","white","on_light_red",attrs=["bold", "blink"]))
             
@@ -51,30 +51,19 @@ def print_banner():
 
 print_banner()
 
-def print_menu():
-    print(colored("\nVeuillez choisir votre mode de jeu :","blue"))
-    print(colored("- 1) Facile : Votre nombre est compris entre 0 et 100 (30 essais MAX)","blue"))
-    print(colored("- 2) Moyen : Votre nombre est compris entre 0 et 100 (15 essais MAX)","blue"))
-    print(colored("- 3) Difficile : Votre nombre est compris entre 0 et 100 (5 essais MAX)","blue"))
-    print(colored("- 4) Hardcore : Votre nombre est compris entre 0 et 100 (1 essai MAX)","blue"))
-    print("")
-    choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
-    return choix
-    
-choix = print_menu()
-    
+print(colored("\nVeuillez choisir votre mode de jeu :","blue"))
+print(colored("- 1) Facile : Votre nombre est compris entre 0 et 100 (30 essai MAX)","blue"))
+print("")
+choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
+
 if(choix == 1):
-    num_essais_MAX = 30
-if(choix == 2):
-    num_essais_MAX = 15
-if(choix == 3):
-    num_essais_MAX = 5
-if(choix == 4):
-    num_essais_MAX = 1
-else:
+    num_computer = random.randint(0,100)
+if(choix != 1):
     while(choix != 1):
-        choix = print_menu()
+        print(colored("\n\nVeuillez choisir votre mode de jeu :","blue"))
+        print(colored("- 1) Facile : Votre nombre est compris entre 0 et 100 (30 essai MAX)","blue"))
+        print("")
+        choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
+    num_computer = random.randint(0,100)
 
-num_computer = random.randint(0,100)
-
-check_validity_num(num_computer,num_essais_MAX)
+check_validity_num(num_computer)

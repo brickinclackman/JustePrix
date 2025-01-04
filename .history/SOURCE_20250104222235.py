@@ -59,10 +59,10 @@ def print_menu():
     print(colored("- 4) Hardcore : Votre nombre est compris entre 0 et 100 (1 essai MAX)","blue"))
     print("")
     choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
-    return choix
     
-choix = print_menu()
-    
+
+
+
 if(choix == 1):
     num_essais_MAX = 30
 if(choix == 2):
@@ -73,7 +73,10 @@ if(choix == 4):
     num_essais_MAX = 1
 else:
     while(choix != 1):
-        choix = print_menu()
+        print(colored("\n\nVeuillez choisir votre mode de jeu :","blue"))
+        print(colored("- 1) Facile : Votre nombre est compris entre 0 et 100 (30 essai MAX)","blue"))
+        print("")
+        choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
 
 num_computer = random.randint(0,100)
 
