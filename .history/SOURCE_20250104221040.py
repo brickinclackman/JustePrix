@@ -57,13 +57,12 @@ print("")
 choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
 
 if(choix == 1):
-    num_computer = random.randint(0,100)
+    
 if(choix != 1):
     while(choix != 1):
         print(colored("\n\nVeuillez choisir votre mode de jeu :","blue"))
         print(colored("- 1) Facile : Votre nombre est compris entre 0 et 100 (30 essai MAX)","blue"))
         print("")
         choix = int(input(colored("Veuillez entrer votre choix : ","light_blue")))
-    num_computer = random.randint(0,100)
 
 check_validity_num(num_computer)
