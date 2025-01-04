@@ -71,35 +71,30 @@ def print_menu():
 
 playing = True
 
-while(playing == True):
+while(playing = True):
     choix = print_menu()
 
-    if(choix == 1):
-        num_essais_MAX = 30
-    if(choix == 2):
-        num_essais_MAX = 15
-    if(choix == 3):
-        num_essais_MAX = 5
-    if(choix == 4):
-        num_essais_MAX = 1
-    else:
-        while(choix > 4 or choix < 1):
-            choix = print_menu()
-            if(choix == 1):
-                num_essais_MAX = 30
-            if(choix == 2):
-                num_essais_MAX = 15
-            if(choix == 3):
-                num_essais_MAX = 5
-            if(choix == 4):
-                num_essais_MAX = 1
+if(choix == 1):
+    num_essais_MAX = 30
+if(choix == 2):
+    num_essais_MAX = 15
+if(choix == 3):
+    num_essais_MAX = 5
+if(choix == 4):
+    num_essais_MAX = 1
+else:
+    while(choix > 4 or choix < 1):
+        choix = print_menu()
+        if(choix == 1):
+            num_essais_MAX = 30
+        if(choix == 2):
+            num_essais_MAX = 15
+        if(choix == 3):
+            num_essais_MAX = 5
+        if(choix == 4):
+            num_essais_MAX = 1
 
-    num_computer = random.randint(0,100)
+num_computer = random.randint(0,100)
 
-    check_validity_num(num_computer,num_essais_MAX)
+check_validity_num(num_computer,num_essais_MAX)
     
-    replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
-    if(replay == "Oui"):
-        playing = True
-    if(replay == "Non"):
-        playing = False

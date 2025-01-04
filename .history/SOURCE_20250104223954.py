@@ -71,7 +71,7 @@ def print_menu():
 
 playing = True
 
-while(playing == True):
+while(playing = True):
     choix = print_menu()
 
     if(choix == 1):
@@ -98,8 +98,4 @@ while(playing == True):
 
     check_validity_num(num_computer,num_essais_MAX)
     
-    replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
-    if(replay == "Oui"):
-        playing = True
-    if(replay == "Non"):
-        playing = False
+    input(colored("Voulez-vous rejouer ? "))

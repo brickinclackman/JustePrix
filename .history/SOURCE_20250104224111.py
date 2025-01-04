@@ -71,7 +71,7 @@ def print_menu():
 
 playing = True
 
-while(playing == True):
+while(playing = True):
     choix = print_menu()
 
     if(choix == 1):
