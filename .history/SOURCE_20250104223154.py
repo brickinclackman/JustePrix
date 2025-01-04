@@ -37,7 +37,7 @@ def check_validity_num(num_comp,num_essais_MAX):
             if(num_essais >= num_essais_MAX):
                 validity = True
                 print(colored("Nombre essaies DÉPASSÉ ! ","white","on_light_red",attrs=["bold", "blink"]))
-                print(colored(f"Voici le nombre de l'ordinateur : {num_comp} ","white","on_light_red",attrs=["bold", "blink"]))
+                print(colored(f"Voici le nombre de l'ordinateur : {num_comp}","white","on_light_red",attrs=["bold", "blink"]))
             if(num_essais < num_essais_MAX):
                 num_user = int(input(colored("Veuillez entrer un nombre : ","light_magenta")))
         
