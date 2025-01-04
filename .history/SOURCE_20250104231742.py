@@ -136,7 +136,7 @@ def main():
         replay = input(colored("Voulez-vous rejouer ? Oui/Non\n","light_cyan"))
         if(replay.upper() == "OUI"):
             playing = True
-        if(replay.upper() == "NON"):
+        if(replay == "NON"):
             playing = False
 
 #------ Lancement du programme ------
