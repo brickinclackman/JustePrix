@@ -51,7 +51,7 @@ def check_validity_num(num_comp,num_essais_MAX,choix_mod):
          
 def print_banner():
     """
-    Affiche une bannière stylée avec animation, suivie du message "made by brickinclackman".
+    Affiche une bannière stylée.
     """
     cols = shutil.get_terminal_size().columns
     banner = """
@@ -62,15 +62,8 @@ def print_banner():
 ╚█████╔╝╚██████╔╝███████║   ██║   ███████╗    ██║     ██║  ██║██║██╔╝ ██╗
  ╚════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝    ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
 """
-    
-    # Affichage progressif de la bannière
-    for char in banner:
-        print(colored(char, "light_yellow", attrs=["bold"]), end="", flush=True)
-        time.sleep(0.04)  # Délai de 50ms entre chaque caractère
-    
-    # Affichage du message "made by brickinclackman"
-    print(colored("made by brickinclackman", "cyan", attrs=["bold"]))
-    time.sleep(0.5)
+    print(colored(banner.center(cols), "light_yellow", attrs=["bold"]))
+     
 
 def print_menu():
     """Affiche le menu de choix des niveaux

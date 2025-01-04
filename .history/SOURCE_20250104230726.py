@@ -69,8 +69,8 @@ def print_banner():
         time.sleep(0.04)  # Délai de 50ms entre chaque caractère
     
     # Affichage du message "made by brickinclackman"
+    print("\n")
     print(colored("made by brickinclackman", "cyan", attrs=["bold"]))
-    time.sleep(0.5)
 
 def print_menu():
     """Affiche le menu de choix des niveaux

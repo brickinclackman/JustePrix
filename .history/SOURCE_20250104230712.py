@@ -66,11 +66,11 @@ def print_banner():
     # Affichage progressif de la bannière
     for char in banner:
         print(colored(char, "light_yellow", attrs=["bold"]), end="", flush=True)
-        time.sleep(0.04)  # Délai de 50ms entre chaque caractère
+        time.sleep(0.03)  # Délai de 50ms entre chaque caractère
     
     # Affichage du message "made by brickinclackman"
+    print("\n")
     print(colored("made by brickinclackman", "cyan", attrs=["bold"]))
-    time.sleep(0.5)
 
 def print_menu():
     """Affiche le menu de choix des niveaux

@@ -70,7 +70,6 @@ def print_banner():
     
     # Affichage du message "made by brickinclackman"
     print(colored("made by brickinclackman", "cyan", attrs=["bold"]))
-    time.sleep(0.5)
 
 def print_menu():
     """Affiche le menu de choix des niveaux
