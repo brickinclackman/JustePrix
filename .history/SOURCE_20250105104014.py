@@ -22,7 +22,7 @@ def check_validity_num(num_comp, num_essais_MAX, choix_mod):
     if(num_essais_MAX > 1):
         print(colored(f"Le nombre mystère est entre 0 et 100. Vous avez {num_essais_MAX} essais.", "yellow"))
     if(num_essais_MAX == 1):
-        print(colored(f"Le nombre mystère est entre 0 et 100. Vous avez {num_essais_MAX} essais.", "yellow"))
+        
     
     # Demander à l'utilisateur de saisir un nombre
     num_user = int(input(colored("\nVeuillez entrer un nombre : ", "light_magenta")))
