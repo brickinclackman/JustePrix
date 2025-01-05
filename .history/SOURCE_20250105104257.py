@@ -118,7 +118,6 @@ def ask_replay():
     replay = input(colored("\nVoulez-vous rejouer ? (Oui/Non)\n", "light_cyan", attrs=["bold"]))
     
     if replay.upper() == "OUI":
-        time.sleep(3)
         print(colored("\n🎮 Super ! On recommence, bonne chance ! 🍀", "green", attrs=["bold"]))
         return True
     elif replay.upper() == "NON":
